@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+  <head>
+    <title>Thymleaf Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    	crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+  </head>
+  <body>
+    <h2>Employee List</h2>
+   
+    <table class="table table-striped">
+   		<thead>
+   			<tr>
+   				<th>First Name</th>
+   				<th>Last Name</th>
+   				<th>Email</th>
+   			</tr>
+   		</thead>
+   		<tbody>
+   			<tr th:each="employee : ${employees}">
+   				<td th:text="${employee.firstName}"></th>
+   				<td th:text="${employee.lastName}"></th>
+   				<td th:text="${employee.email}"></th>
+   			</tr>
+   		</tbody>
+    </table>
+  </body>
+</html>
